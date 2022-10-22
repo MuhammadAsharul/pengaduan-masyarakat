@@ -86,21 +86,21 @@ export default function index() {
 
                                 <NavLink
                                     to="/"
-                                    className={({ isActive }) => (isActive ? 'text-black px-3 py-2 rounded-md text-sm text-[#003D31] font-semibold' : 'text-white hover:text-black px-3 py-2 rounded-md text-sm font-semibold')}
+                                    className={({ isActive }) => (isActive ? 'text-black px-3 py-2 rounded-md text-sm text-[#003D31] font-semibold border border-transparent hover:border-[#003D31] active:border-[#003D31] active:bg-[#003D31] active:text-white duration-150' : 'text-white hover:text-black px-3 py-2 rounded-md text-sm font-semibold')}
                                 >
                                     Statistik
                                 </NavLink>
 
                                 <NavLink
                                     to="/"
-                                    className={({ isActive }) => (isActive ? 'text-black px-3 py-2 rounded-md text-sm text-[#003D31] font-semibold' : 'text-white hover:text-black px-3 py-2 rounded-md text-sm font-semibold')}
+                                    className={({ isActive }) => (isActive ? 'text-black px-3 py-2 rounded-md text-sm text-[#003D31] font-semibold border border-transparent hover:border-[#003D31] active:border-[#003D31] active:bg-[#003D31] active:text-white duration-150' : 'text-white hover:text-black px-3 py-2 rounded-md text-sm font-semibold')}
                                 >
                                     Tentang
                                 </NavLink>
 
                                 <NavLink
                                     to="/"
-                                    className={({ isActive }) => (isActive ? 'text-black px-3 py-2 rounded-md text-sm text-[#003D31] font-semibold' : 'text-white hover:text-black px-3 py-2 rounded-md text-sm font-semibold')}
+                                    className={({ isActive }) => (isActive ? 'text-black px-3 py-2 rounded-md text-sm text-[#003D31] font-semibold border border-transparent hover:border-[#003D31] active:border-[#003D31] active:bg-[#003D31] active:text-white duration-150' : 'text-white hover:text-black px-3 py-2 rounded-md text-sm font-semibold')}
                                 >
                                     Bantuan
                                 </NavLink>
@@ -109,13 +109,13 @@ export default function index() {
                         <div className="flex-shrink-0 flex items-stretch basis-1/3 justify-end">
                             <div className="flex space-x-2">
                                 <button
-                                    className="bg-transparent text-[#003D31] border border-[#003D31] active:bg-emerald-600 font-semibold text-sm px-6 py-2 rounded outline=[#003D31] focus:outline-[#003D31] hover:text-white hover:bg-[#003D31] mr-1 mb-1 ease-linear transition-all duration-150"
+                                    className="bg-transparent text-[#003D31] border border-[#003D31] active:bg-emerald-600 active:border-emerald-600 font-semibold text-sm px-6 py-2 rounded outline=[#003D31] focus:outline-[#003D31] hover:text-white hover:bg-[#003D31] mr-1 mb-1 ease-linear transition-all duration-150"
                                     type="button"
                                 >
                                     Masuk
                                 </button>
                                 <button
-                                    className="bg-[#003D31] text-white border border-[#003D31] active:bg-emerald-600 font-semibold text-sm px-6 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                    className="bg-[#003D31] text-white border border-[#003D31] active:bg-emerald-600 active:border-emerald-600 font-semibold text-sm px-6 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                     type="button"
                                 >
                                     Daftar

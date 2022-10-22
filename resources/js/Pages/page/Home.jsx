@@ -3,6 +3,8 @@ import { useState } from 'react'
 import Peta from '../../Assets/peta.png'
 import illustration1 from '../../Assets/illustration1.png'
 import stepPelaporan from '../../Data/StepPelaporan'
+import karanganyar from '../../Assets/karanganyar.png'
+import store from '../../Assets/store.png'
 // import ModalLapor from '../../Components/PopupLapor'
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
@@ -36,7 +38,7 @@ export default function Home() {
             monitoring dan verifikasi capaian program pembangunan maupun pengaduan masyarakat terkait pelaksanaan program pembangunan nasional.</p>
         </div>
 
-        <button className='btn-modal outline-none bg-[#003D31] py-3 px-6 text-white rounded-[6px] mt-10 hover:bg-[#01725C]'
+        <button className='btn-modal outline-none bg-[#003D31] py-3 px-6 text-white rounded-[6px] mt-10 hover:bg-[#01725C] duration-150'
           onClick={() => setShowModal(true)}>
           Buat Laporan
         </button>
@@ -143,7 +145,7 @@ export default function Home() {
           <div className='grid grid-cols-3 grid-rows-2'>
             {stepPelaporan.map((item, index) => {
               return (
-                <div key={index} className='flex flex-col justify-between p-5 m-2 gap-3  rounded-[22px] bg-[#FFFAE9]'>
+                <div key={index} className='flex flex-col p-5 m-3 gap-1 rounded-[22px] bg-[#FFFAE9]'>
                   <img src={item.image} width='55.81px' height='56px'></img>
                   <p className='font-bold text-[#003D31]'>{item.title}</p>
                   <p className='font-normal text-[#596966]'>{item.sentence}</p>
@@ -159,9 +161,22 @@ export default function Home() {
         <p className='font-bold text-white text-7xl'>69,420</p>
       </div>
 
-      <div className='flex flex-col items-center justify-center w-full bg-[#FFFAE9] h-[230px]'>
-        <p className='font-bold text-5xl mb-[35px]'>Jumlah Laporan Sekarang</p>
-        <p className='font-bold text-white text-7xl'>69,420</p>
+      <div className='flex flex-col items-center justify-center w-full bg-[#FFFAE9] h-[282px]'>
+        <div className='grid grid-cols-3 w-4/5'>
+            <div className='flex flex-col p-5 m-3 gap-1 rounded-[22px] bg-[#FFFAE9] justify-between'>
+              <p className='font-bold text-[#003D31]'>Download Aplikasi Mobile LaporMin</p>
+              <img src={store} width='237px' height='158px'></img>
+            </div>
+            <div className='flex flex-col p-5 m-3 gap-1 rounded-[22px] bg-[#FFFAE9] items-center'>
+              <p className='font-bold text-[#003D31]'>Dikelola Oleh</p>
+              <img src={karanganyar} width='103px' height='125px'></img>
+              <p className='font-normal text-[#003D31]'>Diskominfo Karanganyar</p>
+              <p className='font-normal text-[#003D31]'>Copyright @LaporMin 2022</p>
+            </div>
+            <div className='flex flex-col p-5 m-3 gap-1 rounded-[22px] bg-[#FFFAE9] items-end'>
+              <p className='font-bold text-[#003D31]'>Lebih Dekat Dengan Kami</p>
+            </div>
+        </div>
       </div>
     </div>
   )
