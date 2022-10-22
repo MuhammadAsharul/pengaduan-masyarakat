@@ -1,8 +1,19 @@
 import React from 'react'
+import { useState } from 'react'
 import Peta from '../../Assets/peta.png'
 import illustration1 from '../../Assets/illustration1.png'
 import stepPelaporan from '../../Data/StepPelaporan'
+import ModalLapor from '../../Components/PopupLapor'
 export default function Home() {
+  const [showModal, setShowModal] = useState(false);
+
+  // document.addEventListener("click", (e) => {
+  //   const target = e.target;
+  //   if (showModal == true && !target.closest(".btn-modal")) {
+  //     setShowModal(false);
+  //   }
+  // });
+
   return (
     <div className='flex flex-col w-full'>
       <div className='flex flex-col gap-7 bg-[#5CE4CA] w-full items-center justify-center min-h-screen' style={{ backgroundImage: `url(${Peta})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
@@ -25,9 +36,95 @@ export default function Home() {
             monitoring dan verifikasi capaian program pembangunan maupun pengaduan masyarakat terkait pelaksanaan program pembangunan nasional.</p>
         </div>
 
-        <button className='outline-none bg-[#003D31] py-3 px-6 text-white rounded-[6px] mt-10 hover:bg-[#01725C]'>
+        <button className='btn-modal outline-none bg-[#003D31] py-3 px-6 text-white rounded-[6px] mt-10 hover:bg-[#01725C]'
+          onClick={() => setShowModal(true)}>
           Buat Laporan
         </button>
+
+        {showModal ? (
+          <>
+            <div
+              className="justify-center w-full items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+            >
+              <div className="relative w-1/2 my-6 mx-auto max-w-3xl">
+                {/*content*/}
+                <div className="gap-3 border-0 rounded-lg shadow-lg relative flex flex-col w-full p-4 bg-white outline-none focus:outline-none">
+                  {/*header*/}
+                  <div className="flex items-start justify-between bg-[#5CE4CA] px-5 py-2 border-b border-solid border-slate-200 rounded-t">
+                    <h3 className="text-xl text-white font-semibold">
+                      Sampaikan Laporan Anda
+                    </h3>
+                    <button
+                      className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                      onClick={() => setShowModal(false)}
+                    >
+                      <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+                        ×
+                      </span>
+                    </button>
+                  </div>
+                  {/*body*/}
+                  <form>
+                    <div className='flex flex-col w-full gap-4 items-center'>
+                      <p>Pilih Klasifikasi Laporan</p>
+                      <table className='w-full' border="1">
+                        <tr>
+                          <td><input type="radio" id="html" name="fav_language" value="Pengaduan"></input> Pengaduan</td>
+                          <td><input type="radio" id="html" name="fav_language" value="Aspirasi"></input> Aspirasi</td>
+                          <td><input type="radio" id="html" name="fav_language" value="Permintaan"></input> Permintaan</td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div className='flex flex-col w-full gap-4 text-center'>
+                      <p>Perlihatkan Cara Penyampaian yang Baik dan benar</p>
+                      <div className='flex flex-col w-full gap-3'>
+                        <input type="text" id="fname" name="fname" placeholder='Ketik Judul Laporan Anda *'></input>
+                        <textarea placeholder="Ketik Isi Laporan Anda *"></textarea>
+                        <input type="text" id="fname" name="fname" placeholder="Pilih Tanggal Kejadian"></input>
+                        <input type="text" id="fname" name="fname" placeholder="Ketik Instansi Tujuan *"></input>
+                        <input type="text" id="fname" name="fname" placeholder="Pilih Kategori Laporan Anda *"></input>
+                        <div class="flex justify-center items-center w-full">
+                          <label for="dropzone-file" className="cursor-pointer flex flex-col justify-center items-center w-full bg-gray hover:bg-gray-600">
+                            <div className="flex flex-col justify-center items-center pt-4 pb-4">
+                              <p className="text-xs text-gray-500 dark:text-gray-400">UPLOAD LAMIPRAN (MAX 2MB)</p>
+                            </div>
+                            <input id="dropzone-file" type="file" className="hidden" />
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div></div>
+                  </form>
+                  {/*footer*/}
+                  <div className="flex items-center justify-between p-6 border-t border-solid border-slate-200 rounded-b">
+                    <div>
+                    <label for="lampiran-file" className='cursor-pointer'>
+                      <p className='text-[#003D31]'>Upload Lampiran</p>
+                      <input id="lampiran-file" type="file" className="hidden" />
+                    </label>
+                    </div>
+                    <div>
+                      <button
+                        className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                        type="button"
+                        onClick={() => setShowModal(false)}
+                      >
+                        Close
+                      </button>
+                      <button
+                        className="bg-[#003D31] text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                        type="button"
+                        onClick={() => setShowModal(false)}
+                      >
+                        Mulai Lapor
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="opacity-25 fixed inset-0 z-40 bg-black" onClick={() => setShowModal(false)}></div>
+          </>) : null}
       </div>
 
 
