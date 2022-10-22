@@ -6,7 +6,8 @@ import Logo from "../Assets/logoApk.png";
 export default function index() {
     const [isOpen, setIsOpen] = useState(false);
     const [isOpen2, setIsOpen2] = useState(false);
-    console.log(isOpen)
+    const [navColor, setnavColor] = useState(false);
+
     document.addEventListener("click", (e) => {
         const target = e.target;
         if (isOpen == true && !target.closest(".btn-modal")) {
@@ -17,9 +18,18 @@ export default function index() {
             setIsOpen2(false);
         }
     });
+
+    window.onscroll = () => {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            setnavColor(true)
+            console.log(navColor)
+        }else{
+            setnavColor(false);
+        };
+    }
     
     return (
-        <nav className="bg-transparent w-full fixed">
+        <div className={(navColor ? "lg:bg-[#01725C] lg:w-full lg:fixed" : "lg:bg-transparent lg:w-full lg:fixed")}>
             <div className="bg-transparent max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
                 <div className="relative flex items-center h-16 w-full">
                     <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -80,28 +90,28 @@ export default function index() {
                             <div className="flex justify-center items-center space-x-4 gap-4">
                                 <NavLink
                                     to="/home"
-                                    className={({ isActive }) => (isActive ? 'text-black px-3 py-2 rounded-md text-sm font-bold' : 'text-white hover:text-black px-3 py-2 rounded-md text-sm font-bold')}
+                                    className={({ isActive }) => (isActive ? 'text-black px-3 py-2 rounded-md text-sm font-normal' : 'text-white hover:text-black px-3 py-2 rounded-md text-sm font-normal')}
                                 >
                                     Home Page
                                 </NavLink>
 
                                 <NavLink
                                     to="/"
-                                    className={({ isActive }) => (isActive ? 'text-black px-3 py-2 rounded-md text-sm font-bold' : 'text-white hover:text-black px-3 py-2 rounded-md text-sm font-bold')}
+                                    className={({ isActive }) => (isActive ? 'text-black px-3 py-2 rounded-md text-sm font-normal' : 'text-white hover:text-black px-3 py-2 rounded-md text-sm font-normal')}
                                 >
                                     Statistik
                                 </NavLink>
 
                                 <NavLink
                                     to="/"
-                                    className={({ isActive }) => (isActive ? 'text-black px-3 py-2 rounded-md text-sm font-bold' : 'text-white hover:text-black px-3 py-2 rounded-md text-sm font-bold')}
+                                    className={({ isActive }) => (isActive ? 'text-black px-3 py-2 rounded-md text-sm font-normal' : 'text-white hover:text-black px-3 py-2 rounded-md text-sm font-normal')}
                                 >
                                     Tentang
                                 </NavLink>
 
                                 <NavLink
                                     to="/"
-                                    className={({ isActive }) => (isActive ? 'text-black px-3 py-2 rounded-md text-sm font-bold' : 'text-white hover:text-black px-3 py-2 rounded-md text-sm font-bold')}
+                                    className={({ isActive }) => (isActive ? 'text-black px-3 py-2 rounded-md text-sm font-normal' : 'text-white hover:text-black px-3 py-2 rounded-md text-sm font-normal')}
                                 >
                                     Bantuan
                                 </NavLink>
@@ -151,6 +161,6 @@ export default function index() {
                 </div> : null}
                 
             </div>
-        </nav>
+        </div>
     );
 }
