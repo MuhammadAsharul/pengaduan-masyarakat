@@ -74,47 +74,52 @@ export default function index() {
                         </button>
                     </div>
                     <div className="flex items-center justify-between sm:items-stretch sm:justify-start w-full">
-                        <div className="flex-shrink-0 flex items-center basis-1/5">
-                            <img
-                                className="block lg:hidden h-8 w-auto"
-                                src={Logo}
-                                alt="Workflow"
-                            ></img>
+                        <div className="flex-shrink-0 flex items-center basis-1/3">
                             <img
                                 className="hidden lg:block h-8 w-auto"
                                 src={Logo}
                                 alt="Workflow"
                             ></img>
                         </div>
-                        <div className="flex hidden sm:block sm:ml-6 basis-4/5">
-                            <div className="flex justify-center items-center space-x-4 gap-4">
-                                <NavLink
-                                    to="/home"
-                                    className={({ isActive }) => (isActive ? 'text-black px-3 py-2 rounded-md text-sm font-normal' : 'text-white hover:text-black px-3 py-2 rounded-md text-sm font-normal')}
-                                >
-                                    Home Page
-                                </NavLink>
+                        <div className="flex-shrink-0 flex items-center basis-1/3 justify-center">
+                            <div className="flex space-x-4 gap-4">
 
                                 <NavLink
                                     to="/"
-                                    className={({ isActive }) => (isActive ? 'text-black px-3 py-2 rounded-md text-sm font-normal' : 'text-white hover:text-black px-3 py-2 rounded-md text-sm font-normal')}
+                                    className={({ isActive }) => (isActive ? 'text-black px-3 py-2 rounded-md text-sm text-[#003D31] font-semibold border border-transparent hover:border-[#003D31] active:border-[#003D31] active:bg-[#003D31] active:text-white duration-150' : 'text-white hover:text-black px-3 py-2 rounded-md text-sm font-semibold')}
                                 >
                                     Statistik
                                 </NavLink>
 
                                 <NavLink
                                     to="/"
-                                    className={({ isActive }) => (isActive ? 'text-black px-3 py-2 rounded-md text-sm font-normal' : 'text-white hover:text-black px-3 py-2 rounded-md text-sm font-normal')}
+                                    className={({ isActive }) => (isActive ? 'text-black px-3 py-2 rounded-md text-sm text-[#003D31] font-semibold border border-transparent hover:border-[#003D31] active:border-[#003D31] active:bg-[#003D31] active:text-white duration-150' : 'text-white hover:text-black px-3 py-2 rounded-md text-sm font-semibold')}
                                 >
                                     Tentang
                                 </NavLink>
 
                                 <NavLink
                                     to="/"
-                                    className={({ isActive }) => (isActive ? 'text-black px-3 py-2 rounded-md text-sm font-normal' : 'text-white hover:text-black px-3 py-2 rounded-md text-sm font-normal')}
+                                    className={({ isActive }) => (isActive ? 'text-black px-3 py-2 rounded-md text-sm text-[#003D31] font-semibold border border-transparent hover:border-[#003D31] active:border-[#003D31] active:bg-[#003D31] active:text-white duration-150' : 'text-white hover:text-black px-3 py-2 rounded-md text-sm font-semibold')}
                                 >
                                     Bantuan
                                 </NavLink>
+                            </div>
+                        </div>
+                        <div className="flex-shrink-0 flex items-stretch basis-1/3 justify-end">
+                            <div className="flex space-x-2">
+                                <button
+                                    className="bg-transparent text-[#003D31] border border-[#003D31] active:bg-emerald-600 active:border-emerald-600 font-semibold text-sm px-6 py-2 rounded outline=[#003D31] focus:outline-[#003D31] hover:text-white hover:bg-[#003D31] mr-1 mb-1 ease-linear transition-all duration-150"
+                                    type="button"
+                                >
+                                    Masuk
+                                </button>
+                                <button
+                                    className="bg-[#003D31] text-white border border-[#003D31] active:bg-emerald-600 active:border-emerald-600 font-semibold text-sm px-6 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                    type="button"
+                                >
+                                    Daftar
+                                </button>
                             </div>
                         </div>
                     </div>
