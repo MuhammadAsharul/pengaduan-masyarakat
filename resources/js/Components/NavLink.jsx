@@ -2,11 +2,13 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Logo from "../Assets/logoApk.png";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import "./NavbarColor.css";
 
 export default function index() {
     const [isOpen, setIsOpen] = useState(false);
     const [isOpen2, setIsOpen2] = useState(false);
-    const [navColor, setnavColor] = useState(false);
+    const [navColor, setNavColor] = useState(false);
 
     document.addEventListener("click", (e) => {
         const target = e.target;
@@ -19,18 +21,19 @@ export default function index() {
         }
     });
 
-    window.onscroll = () => {
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            setnavColor(true)
-            console.log(navColor)
+    const changeNavbarColor = () => {
+        if (window.scrollY >= 100) {
+            setNavColor(true)
         }else{
-            setnavColor(false);
+            setNavColor(false);
         };
     }
+        
+    window.addEventListener('scroll', changeNavbarColor);
     
     return (
-        <div className={(navColor ? "lg:bg-[#01725C] lg:w-full lg:fixed" : "lg:bg-transparent lg:w-full lg:fixed")}>
-            <div className="bg-transparent max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+        <div className={(navColor ? "navbar lg:w-full lg:fixed duration-200" : "lg:bg-transparent lg:w-full lg:fixed duration-200")}>
+            <div className="bg-transparent max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 w-4/5">
                 <div className="relative flex items-center h-16 w-full">
                     <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                         <button
@@ -84,31 +87,25 @@ export default function index() {
                         <div className="flex-shrink-0 flex items-center basis-1/3 justify-center">
                             <div className="flex space-x-4 gap-4">
 
-                                <NavLink
-                                    to="/"
-                                    className={({ isActive }) => (isActive ? 'text-black px-3 py-2 rounded-md text-sm text-[#003D31] font-semibold border border-transparent hover:border-[#003D31] active:border-[#003D31] active:bg-[#003D31] active:text-white duration-150' : 'text-white hover:text-black px-3 py-2 rounded-md text-sm font-semibold')}
-                                >
-                                    Statistik
-                                </NavLink>
+                                <AnchorLink
+                                    href="#tentang" className='text-black px-3 py-2 rounded-md text-sm text-[#003D31] font-semibold border border-transparent hover:border-[#003D31] active:border-[#003D31] active:bg-[#003D31] active:text-white duration-150'>
+                                        Tentang    
+                                </AnchorLink>
 
-                                <NavLink
-                                    to="/"
-                                    className={({ isActive }) => (isActive ? 'text-black px-3 py-2 rounded-md text-sm text-[#003D31] font-semibold border border-transparent hover:border-[#003D31] active:border-[#003D31] active:bg-[#003D31] active:text-white duration-150' : 'text-white hover:text-black px-3 py-2 rounded-md text-sm font-semibold')}
-                                >
-                                    Tentang
-                                </NavLink>
+                                <AnchorLink
+                                    href="#tatacara" className='text-black px-3 py-2 rounded-md text-sm text-[#003D31] font-semibold border border-transparent hover:border-[#003D31] active:border-[#003D31] active:bg-[#003D31] active:text-white duration-150'>
+                                        Tata Cara
+                                </AnchorLink>
 
-                                <NavLink
-                                    to="/"
-                                    className={({ isActive }) => (isActive ? 'text-black px-3 py-2 rounded-md text-sm text-[#003D31] font-semibold border border-transparent hover:border-[#003D31] active:border-[#003D31] active:bg-[#003D31] active:text-white duration-150' : 'text-white hover:text-black px-3 py-2 rounded-md text-sm font-semibold')}
-                                >
-                                    Bantuan
-                                </NavLink>
+                                <AnchorLink
+                                    href="#bantuan" className='text-black px-3 py-2 rounded-md text-sm text-[#003D31] font-semibold border border-transparent hover:border-[#003D31] active:border-[#003D31] active:bg-[#003D31] active:text-white duration-150'>
+                                        Bantuan   
+                                </AnchorLink>
                             </div>
                         </div>
                         <div className="flex-shrink-0 flex items-stretch basis-1/3 justify-end">
                             <div className="flex space-x-2">
-                                <button
+                                {/* <button
                                     className="bg-transparent text-[#003D31] border border-[#003D31] active:bg-emerald-600 active:border-emerald-600 font-semibold text-sm px-6 py-2 rounded outline=[#003D31] focus:outline-[#003D31] hover:text-white hover:bg-[#003D31] mr-1 mb-1 ease-linear transition-all duration-150"
                                     type="button"
                                 >
@@ -119,7 +116,7 @@ export default function index() {
                                     type="button"
                                 >
                                     Daftar
-                                </button>
+                                </button> */}
                             </div>
                         </div>
                     </div>
