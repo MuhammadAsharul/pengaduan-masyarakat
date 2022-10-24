@@ -38,7 +38,7 @@ export default function Home() {
             monitoring dan verifikasi capaian program pembangunan maupun pengaduan masyarakat terkait pelaksanaan program pembangunan nasional.</p>
         </div>
 
-        <button className='btn-modal outline-none bg-[#003D31] py-3 px-6 text-white rounded-[6px] mt-10 hover:bg-[#01725C] duration-150'
+        <button className='btn-modal outline-none bg-[#003D31] py-3 px-6 text-white rounded-[6px] mt-10 hover:bg-[#01725C] active:bg-[#FFFAE9] active:text-[#003D31] duration-150'
           onClick={() => setShowModal(true)}>
           Buat Laporan
         </button>
@@ -67,18 +67,87 @@ export default function Home() {
                   </div>
                   {/*body*/}
                   <form>
-                    <div className='flex flex-col w-full gap-4 items-center'>
-                      <p>Pilih Klasifikasi Laporan</p>
-                      <table className='w-full' border="1">
+                    <div className='flex flex-col w-full gap-4 '>
+                      <p className='text-[#003D31]'>Pilih Klasifikasi Laporan</p>
+                      {/* <table className='w-full' border="1">
                         <tr>
-                          <td><input type="radio" id="html" name="fav_language" value="Pengaduan"></input> Pengaduan</td>
-                          <td><input type="radio" id="html" name="fav_language" value="Aspirasi"></input> Aspirasi</td>
-                          <td><input type="radio" id="html" name="fav_language" value="Permintaan"></input> Permintaan</td>
+                          <td><input type="radio" id="html" name="fav_language" value="Pengaduan" className='text-[#003D31]'></input> Pengaduan</td>
+                          <td><input type="radio" id="html" name="fav_language" value="Aspirasi" className='text-[#003D31]'></input> Aspirasi</td>
+                          <td><input type="radio" id="html" name="fav_language" value="Permintaan" className='text-[#003D31]'></input> Permintaan</td>
                         </tr>
-                      </table>
+                      </table> */}
+                      <div className="flex items-center justify-center">
+                        <div className="inline-flex w-full" role="group">
+                          <button
+                            type="button"
+                            class="
+                              basis-1/3
+                              rounded-l
+                              px-6
+                              py-2
+                              border-2 border-[#003D31]
+                              text-[#003D31]
+                              font-semibold
+                              text-s
+                              leading-tight
+                              hover:bg-black hover:bg-opacity-5
+                              active:bg-[#003D31] active:text-white
+                              focus:outline-none focus:ring-0
+                              transition
+                              duration-150
+                              ease-in-out
+                            "
+                          >
+                            Pengaduan
+                          </button>
+                          <button
+                            type="button"
+                            class="
+                              basis-1/3
+                              px-6
+                              py-2
+                              border-t-2 border-b-2 border-[#003D31]
+                              text-[#003D31]
+                              font-semibold
+                              text-s
+                              leading-tight
+                              hover:bg-black hover:bg-opacity-5
+                              active:bg-[#003D31] active:text-white
+                              focus:outline-none focus:ring-0
+                              transition
+                              duration-150
+                              ease-in-out
+                            "
+                          >
+                            Aspirasi
+                          </button>
+                          <button
+                            type="button"
+                            class="
+                              basis-1/3
+                              rounded-r
+                              px-6
+                              py-2
+                              border-2 border-[#003D31]
+                              text-[#003D31]
+                              font-semibold
+                              text-s
+                              leading-tight
+                              hover:bg-black hover:bg-opacity-5
+                              active:bg-[#003D31] active:text-white
+                              focus:outline-none focus:ring-0
+                              transition
+                              duration-150
+                              ease-in-out
+                            "
+                          >
+                            Permintaan Informasi
+                          </button>
+                        </div>
+                      </div>
                     </div>
                     <div className='flex flex-col w-full gap-4 text-center'>
-                      <p>Perlihatkan Cara Penyampaian yang Baik dan benar</p>
+                      <p className='text-[#003D31]'>Perhatikan Cara Penyampaian yang Baik dan benar</p>
                       <div className='flex flex-col w-full gap-3'>
                         <input type="text" id="fname" name="fname" placeholder='Ketik Judul Laporan Anda *'></input>
                         <textarea placeholder="Ketik Isi Laporan Anda *"></textarea>
@@ -86,9 +155,9 @@ export default function Home() {
                         <input type="text" id="fname" name="fname" placeholder="Ketik Instansi Tujuan *"></input>
                         <input type="text" id="fname" name="fname" placeholder="Pilih Kategori Laporan Anda *"></input>
                         <div class="flex justify-center items-center w-full">
-                          <label for="dropzone-file" className="cursor-pointer flex flex-col justify-center items-center w-full bg-gray hover:bg-gray-600">
+                          <label for="dropzone-file" className="cursor-pointer flex flex-col justify-center items-center w-full bg-[#EFEFEF] active:bg-[#C7C7C7] border border-2 border-dashed border-[#003D31]">
                             <div className="flex flex-col justify-center items-center pt-4 pb-4">
-                              <p className="text-xs text-gray-500 dark:text-gray-400">UPLOAD LAMIPRAN (MAX 2MB)</p>
+                              <p className="text-s font-bold text-[#003D31]">UPLOAD LAMPIRAN (MAX 2MB)</p>
                             </div>
                             <input id="dropzone-file" type="file" className="hidden" />
                           </label>
@@ -97,29 +166,29 @@ export default function Home() {
                     </div>
                     <div></div>
                   </form>
-                  <div className="flex items-center justify-between p-6 border-t border-solid border-slate-200 rounded-b">
-                    <div>
+                  <div className="flex items-center justify-between">
+                    {/* <div>
                     <label for="lampiran-file" className='cursor-pointer'>
                       <p className='text-[#003D31]'>Upload Lampiran</p>
                       <input id="lampiran-file" type="file" className="hidden" />
                     </label>
-                    </div>
-                    <div>
+                    </div> */}
+                    {/* <div> */}
                       <button
-                        className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                        className="bg-transparent text-red-500 active:bg-red-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:bg-red-500 hover:text-white outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                         type="button"
                         onClick={() => setShowModal(false)}
                       >
                         Close
                       </button>
                       <button
-                        className="bg-[#003D31] text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                        className="bg-[#003D31] text-white active:bg-[#FFFAE9] active:text-[#003D31] font-bold uppercase text-sm px-6 py-3 rounded shadow hover:bg-[#01725C] outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                         type="button"
                         onClick={() => setShowModal(false)}
                       >
                         Mulai Lapor
                       </button>
-                    </div>
+                    {/* </div> */}
                   </div>
                 </div>
               </div>
@@ -130,7 +199,7 @@ export default function Home() {
 
 
       <div className='flex flex-col items-center justify-center bg-white w-full items-center justify-center'>
-        <div className='flex items-center justify-center w-4/5 min-h-screen'>
+        <div className='flex items-center justify-center w-4/5 min-h-screen' id='tentang'>
           <div className='w-2/5'>
             <img src={illustration1} alt="" />
           </div>
@@ -140,7 +209,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className='flex flex-col w-4/5 min-h-screen items-center'>
+        <div className='flex flex-col w-4/5 min-h-screen items-center' id='tatacara'>
           <p className='font-bold text-[#003D31] text-[46px] mb-[122px]'>Tata Cara <span className='text-[#5CE4CA]'>Pelaporan</span></p>
           <div className='grid grid-cols-3 grid-rows-2'>
             {stepPelaporan.map((item, index) => {
@@ -161,20 +230,29 @@ export default function Home() {
         <p className='font-bold text-white text-7xl'>69,420</p>
       </div>
 
-      <div className='flex flex-col items-center justify-center w-full bg-[#FFFAE9] h-[282px]'>
-        <div className='grid grid-cols-3 w-4/5'>
-            <div className='flex flex-col p-5 m-3 gap-1 rounded-[22px] bg-[#FFFAE9] justify-between'>
+      <div className='flex flex-col items-center justify-center w-full bg-[#FFFAE9]'>
+        <div className='grid grid-cols-3 w-4/5' id='bantuan'>
+            <div className='flex flex-col p-5 m-3 gap-1 '>
               <p className='font-bold text-[#003D31]'>Download Aplikasi Mobile LaporMin</p>
               <img src={store} width='237px' height='158px'></img>
             </div>
-            <div className='flex flex-col p-5 m-3 gap-1 rounded-[22px] bg-[#FFFAE9] items-center'>
+            <div className='flex flex-col p-5 m-3 gap-1 items-center gap-2'>
               <p className='font-bold text-[#003D31]'>Dikelola Oleh</p>
               <img src={karanganyar} width='103px' height='125px'></img>
               <p className='font-normal text-[#003D31]'>Diskominfo Karanganyar</p>
               <p className='font-normal text-[#003D31]'>Copyright @LaporMin 2022</p>
             </div>
-            <div className='flex flex-col p-5 m-3 gap-1 rounded-[22px] bg-[#FFFAE9] items-end'>
+            <div className='flex flex-col p-5 m-3 gap-1 items-end'>
               <p className='font-bold text-[#003D31]'>Lebih Dekat Dengan Kami</p>
+              <button 
+                className='rounded-full bg-[#003D31] text-[#FFFAE9] active:bg-[#01725C] active:text-[#FFFAE9] font-semibold text-sm px-4 py-2 rounded outline=[#003D31] focus:outline-[#003D31] hover:text-[#003D31] hover:bg-[#FFFAA4] mr-1 mb-1 ease-linear transition-all duration-150' type='button'>Facebook
+              </button>
+              <button
+                className='rounded-full bg-[#003D31] text-[#FFFAE9] active:bg-[#01725C] active:text-[#FFFAE9] font-semibold text-sm px-4 py-2 rounded outline=[#003D31] focus:outline-[#003D31] hover:text-[#003D31] hover:bg-[#FFFAA4] mr-1 mb-1 ease-linear transition-all duration-150' type='button'>LinkedIn
+              </button>
+              <button
+                className='rounded-full bg-[#003D31] text-[#FFFAE9] active:bg-[#01725C] active:text-[#FFFAE9] font-semibold text-sm px-4 py-2 rounded outline=[#003D31] focus:outline-[#003D31] hover:text-[#003D31] hover:bg-[#FFFAA4] mr-1 mb-1 ease-linear transition-all duration-150' type='button'>Twitter
+              </button>
             </div>
         </div>
       </div>
